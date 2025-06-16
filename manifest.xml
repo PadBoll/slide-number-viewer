@@ -62,8 +62,8 @@
               <bt:Image id="icon80" DefaultValue="https://via.placeholder.com/80"/>
             </bt:Images>
             <bt:Urls>
-              <bt:Url id="functionFile" DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/slide-number-viewer/function.html"/>
-              <bt:Url id="taskPaneUrl" DefaultValue="https://YOUR_GITHUB_USERNAME.github.io/slide-number-viewer/taskpane.html"/>
+              <bt:Url id="functionFile" DefaultValue="https://PadBoll.github.io/slide-number-viewer/function.html"/>
+              <bt:Url id="taskPaneUrl" DefaultValue="https://PadBoll.github.io/slide-number-viewer/taskpane.html"/>
             </bt:Urls>
             <bt:ShortStrings>
               <bt:String id="groupLabel" DefaultValue="Slide Viewer Group"/>
