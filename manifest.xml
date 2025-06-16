@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>00000000-0000-0000-0000-000000000000</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Your Name</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Slide Number Viewer"/>
+  <Description DefaultValue="View current slide number in PowerPoint"/>
+  <IconUrl DefaultValue="https://via.placeholder.com/32"/>
+  <SupportUrl DefaultValue="https://example.com"/>
+
+  <Hosts>
+    <Host Name="Presentation"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:8080/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Presentation">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title>Slide Number Viewer</Title>
+            <Description>Check the current slide number</Description>
+            <LearnMoreUrl>https://example.com</LearnMoreUrl>
+          </GetStarted>
+          <FunctionFile resid="functionFile"/>
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="msgReadGroup">
+                <Label resid="groupLabel"/>
+                <Control xsi:type="Button" id="taskpaneButton">
+                  <Label resid="paneButtonLabel"/>
+                  <Supertip>
+                    <Title resid="paneSuperTipTitle"/>
+                    <Description resid="paneSuperTipDescription"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="icon16"/>
+                    <bt:Image size="32" resid="icon32"/>
+                    <bt:Image size="80" resid="icon80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="taskPaneUrl"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+          <Resources>
+            <bt:Images>
+              <bt:Image id="icon16" DefaultValue="https://via.placeholder.com/16"/>
+              <bt:Image id="icon32" DefaultValue="https://via.placeholder.com/32"/>
+              <bt:Image id="icon80" DefaultValue="https://via.placeholder.com/80"/>
+            </bt:Images>
+            <bt:Urls>
+              <bt:Url id="functionFile" DefaultValue="https://localhost:8080/function.html"/>
+              <bt:Url id="taskPaneUrl" DefaultValue="https://localhost:8080/taskpane.html"/>
+            </bt:Urls>
+            <bt:ShortStrings>
+              <bt:String id="groupLabel" DefaultValue="Slide Viewer Group"/>
+              <bt:String id="paneButtonLabel" DefaultValue="Show Slide Number"/>
+              <bt:String id="paneSuperTipTitle" DefaultValue="Slide Viewer"/>
+            </bt:ShortStrings>
+            <bt:LongStrings>
+              <bt:String id="paneSuperTipDescription" DefaultValue="Displays the current slide number."/>
+            </bt:LongStrings>
+          </Resources>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+  </VersionOverrides>
+</OfficeApp>
